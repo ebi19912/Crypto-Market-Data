@@ -1,5 +1,5 @@
 # 📊 Crypto Market Data & Charting Engine
-### داشبورد جامع تحلیل و مصورسازی داده‌های بازار رمزارز نوبیتکس
+### Interactive Cryptocurrency Market Intelligence & Historical OHLCV Analytics
 
 [![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit App](https://img.shields.io/badge/Framework-Streamlit-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
@@ -9,92 +9,10 @@
 
 ---
 
-## 🌐 زبان‌ها / Languages
-- [فارسی (Persian)](#-بخش-فارسی)
-- [English](#-english-section)
+## 🌐 Languages / زبان‌ها
+- [🇬🇧 English](#-english-section)
+- [🇮🇷 فارسی (Persian)](#-بخش-فارسی)
 
----
-
-<a name="-بخش-فارسی"></a>
-# 🇮🇷 بخش فارسی
-
-## 📋 معرفی پروژه
-**Crypto-Market-Data** یک پلتفرم تعاملی و ابزار تحلیل داده‌های بازار رمزارزها بر بستر وب است که با استفاده از پایتون، فریم‌ورک **Streamlit**، کتابخانه مصورسازی **Plotly** و اتصال مستقیم به وب‌سرویس‌های عمومی صرافی **نوبیتکس (Nobitex)** پیاده‌سازی شده است.
-
-این سامانه به تحلیل‌گران، تریدرها و توسعه‌دهندگان الگوریتم‌های معاملاتی امکان می‌دهد تا:
-1. داده‌های قیمتی تاریخی (کندل‌استیک‌های OHLCV) را از ابتدای فهرست شدن تا لحظه جاری با تایم‌فریم‌های گوناگون دریافت و تحلیل نمایند.
-2. قیمت‌های مرجع جهانی رمزارزها را به صورت آنی مقایسه کنند.
-3. نمودارهای تکنیکال تعاملی با محور دوگانه (Dual-Axis) برای قیمت و حجم معاملات را رسم و پیمایش کنند.
-
----
-
-## ✨ ویژگی‌های کلیدی
-- **پوشش بیش از ۲۰۰ جفت‌ارز معاملاتی**: پشتیبانی کامل از بازارهای ریالی/تومانی (`IRT`) و تتری (`USDT`) شامل BTC, ETH, SOL, TON, SHIB, DOGE و...
-- **پشتیبانی از چندین تایم‌فریم (رزولوشن)**: دریافت داده در تایم‌فریم‌های ۱، ۵، ۱۵، ۳۰، ۶۰ (۱ ساعت)، ۱۸۰ (۳ ساعت)، ۲۴۰ (۴ ساعت)، ۳۶۰ (۶ ساعت)، ۷۲۰ (۱۲ ساعت) و روزانه (D, 2D, 3D).
-- **نمودارهای تعاملی پیشرفته**: رسم نمودارهای شمعی ژاپنی (Candlestick) و نمودار خطی همراه با اندیکاتور حجم معاملات روی محور مجزا.
-- **آمار و مظنه‌های جهانی**: دریافت قیمت‌های مرجع بین‌المللی با اندپوینت `global-stats`.
-- **بهینه‌سازی با کَشینگ (Caching)**: استفاده از مکانیسم کش هوشمند استریم‌لیت جهت کاهش ترافیک شبکه و افزایش چشمگیر سرعت بارگذاری.
-- **دو زبانه بودن (Bilingual)**: ارائه نسخه کامل فارسی (`market_app.py`) و انگلیسی (`market_app_en.py`).
-
----
-
-## 🗂️ ساختار پروژه
-```text
-Crypto-Market-Data/
-├── market_app.py         # برنامه تحت وب با رابط کاربری و توضیحات فارسی
-├── market_app_en.py      # برنامه تحت وب با رابط کاربری و توضیحات انگلیسی
-├── requirements.txt      # لیست پیش‌نیازها و پکیج‌های پایتون
-├── .gitignore            # فایل‌های نادیده‌گرفته‌شده توسط گیت
-└── README.md             # مستندات کامل پروژه به دو زبان فارسی و انگلیسی
-```
-
----
-
-## 🚀 راهنمای نصب و راه‌اندازی
-
-### ۱. کلون کردن مخزن
-```bash
-git clone https://github.com/ebi19912/Crypto-Market-Data.git
-cd Crypto-Market-Data
-```
-
-### ۲. ساخت و فعال‌سازی محیط مجازی (Virtual Environment)
-```bash
-# ویندوز (PowerShell / CMD)
-python -m venv venv
-.\venv\Scripts\activate
-
-# لینوکس / مک
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### ۳. نصب پیش‌نیازها
-```bash
-pip install -r requirements.txt
-```
-
-### ۴. اجرای برنامه
-- **اجرای نسخه فارسی:**
-```bash
-streamlit run market_app.py
-```
-- **اجرای نسخه انگلیسی:**
-```bash
-streamlit run market_app_en.py
-```
-سپس مرورگر خود را باز کرده و به آدرس `http://localhost:8501` مراجعه کنید.
-
----
-
-## 🔌 وب‌سرویس‌های استفاده‌شده (API Endpoints)
-این برنامه مستقیماً با APIهای عمومی نوبیتکس ارتباط برقرار می‌کند و نیاز به کلید دسترسی (API Key) ندارد:
-- **داده‌های کندل‌استیک (UDF):**
-  `GET https://api.nobitex.ir/market/udf/history?symbol={symbol}&resolution={resolution}&from={from}&to={to}`
-- **آمار و قیمت‌های جهانی:**
-  `POST https://api.nobitex.ir/market/global-stats`
-
----
 ---
 
 <a name="-english-section"></a>
@@ -103,25 +21,28 @@ streamlit run market_app_en.py
 ## 📋 Project Overview
 **Crypto-Market-Data** is an interactive cryptocurrency market analysis and visualization suite powered by **Python**, **Streamlit**, **Plotly**, and direct integration with **Nobitex's Public REST APIs**.
 
-It enables quantitative analysts, traders, and crypto enthusiasts to systematically fetch historical OHLCV (Open, High, Low, Close, Volume) candlestick records, examine global benchmark valuations, and interactively explore financial charts.
+It enables quantitative analysts, algorithmic traders, and crypto enthusiasts to:
+1. Systematically retrieve historical OHLCV (Open, High, Low, Close, Volume) candlestick data from the inception of each market up to the current date across various resolutions.
+2. Cross-reference real-time international crypto benchmark valuations.
+3. Explore interactive dual-axis technical charts featuring Candlestick/Line price action combined with trading volume histograms.
 
 ---
 
 ## ✨ Key Features
-- **200+ Trading Pairs**: Full coverage across both USDT and IRT (Iranian Rial) quoted markets (e.g., BTC, ETH, SOL, XRP, DOGE, ADA).
+- **200+ Trading Pairs**: Comprehensive market coverage across both USDT and IRT (Iranian Rial Token) trading pairs (e.g., BTC, ETH, SOL, XRP, DOGE, ADA, TON, SHIB).
 - **Multi-Resolution Timeframes**: Supports 1m, 5m, 15m, 30m, 60m (1h), 180m (3h), 240m (4h), 360m (6h), 720m (12h), 1D, 2D, and 3D resolutions.
-- **Rich Interactive Visualizations**: Dual-axis Plotly charts featuring Candlestick / Line price action coupled with trading volume histograms.
-- **Global Valuation Benchmarks**: Real-time cross-referencing of international cryptocurrency price indices.
+- **Rich Interactive Visualizations**: Dual-axis Plotly charts featuring Candlestick / Line price action coupled with trading volume sub-charts.
+- **Global Valuation Benchmarks**: Real-time reference prices from major international exchanges.
 - **Smart Data Caching**: In-memory response caching via Streamlit's `@st.cache_data` to ensure low latency and prevent API throttling.
-- **Dual Language Support**: Standalone implementations in both Persian (`market_app.py`) and English (`market_app_en.py`).
+- **Dual Language Support**: Standalone implementations in both English (`market_app_en.py`) and Persian (`market_app.py`).
 
 ---
 
 ## 🗂️ Project Structure
 ```text
 Crypto-Market-Data/
-├── market_app.py         # Persian UI Streamlit Application
 ├── market_app_en.py      # English UI Streamlit Application
+├── market_app.py         # Persian UI Streamlit Application
 ├── requirements.txt      # Python dependencies specification
 ├── .gitignore            # Git exclusion rules
 └── README.md             # Comprehensive bilingual project documentation
@@ -154,13 +75,13 @@ pip install -r requirements.txt
 ```
 
 ### 4. Run the Application
-- **To launch the Persian Dashboard:**
-```bash
-streamlit run market_app.py
-```
 - **To launch the English Dashboard:**
 ```bash
 streamlit run market_app_en.py
+```
+- **To launch the Persian Dashboard:**
+```bash
+streamlit run market_app.py
 ```
 Open your browser and navigate to `http://localhost:8501`.
 
@@ -176,7 +97,7 @@ Open your browser and navigate to `http://localhost:8501`.
 ---
 
 ## 🔗 Integrated Endpoints
-The platform utilizes public endpoints that do not require API authentication:
+The platform communicates directly with public endpoints that do not require API authentication:
 1. **TradingView UDF Historical Candlesticks**:
    `GET https://api.nobitex.ir/market/udf/history?symbol={symbol}&resolution={resolution}&from={from}&to={to}`
 2. **Global Benchmark Statistics**:
@@ -191,3 +112,85 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📄 License
 This project is open-source and available under the [MIT License](LICENSE).
+
+---
+---
+
+<a name="-بخش-فارسی"></a>
+# 🇮🇷 بخش فارسی
+
+## 📋 معرفی پروژه
+**Crypto-Market-Data** یک پلتفرم تعاملی و ابزار تحلیل داده‌های بازار رمزارزها بر بستر وب است که با استفاده از پایتون، فریم‌ورک **Streamlit**، کتابخانه مصورسازی **Plotly** و اتصال مستقیم به وب‌سرویس‌های عمومی صرافی **نوبیتکس (Nobitex)** پیاده‌سازی شده است.
+
+این سامانه به تحلیل‌گران، تریدرها و توسعه‌دهندگان الگوریتم‌های معاملاتی امکان می‌دهد تا:
+1. داده‌های قیمتی تاریخی (کندل‌استیک‌های OHLCV) را از ابتدای فهرست شدن نماد تا لحظه جاری با تایم‌فریم‌های گوناگون دریافت و تحلیل نمایند.
+2. قیمت‌های مرجع جهانی رمزارزها را به صورت آنی مقایسه کنند.
+3. نمودارهای تکنیکال تعاملی با محور دوگانه (Dual-Axis) برای قیمت و حجم معاملات را رسم و تحلیل کنند.
+
+---
+
+## ✨ ویژگی‌های کلیدی
+- **پوشش بیش از ۲۰۰ جفت‌ارز معاملاتی**: پشتیبانی کامل از بازارهای ریالی/تومانی (`IRT`) و تتری (`USDT`) شامل BTC, ETH, SOL, TON, SHIB, DOGE و...
+- **پشتیبانی از چندین تایم‌فریم (رزولوشن)**: دریافت داده در تایم‌فریم‌های ۱، ۵، ۱۵، ۳۰، ۶۰ (۱ ساعت)، ۱۸۰ (۳ ساعت)، ۲۴۰ (۴ ساعت)، ۳۶۰ (۶ ساعت)، ۷۲۰ (۱۲ ساعت) و روزانه (D, 2D, 3D).
+- **نمودارهای تعاملی پیشرفته**: رسم نمودارهای شمعی ژاپنی (Candlestick) و نمودار خطی همراه با اندیکاتور حجم معاملات روی محور مجزا.
+- **آمار و مظنه‌های جهانی**: دریافت قیمت‌های مرجع بین‌المللی با اندپوینت `global-stats`.
+- **بهینه‌سازی با کَشینگ (Caching)**: استفاده از مکانیسم کش هوشمند استریم‌لیت جهت کاهش ترافیک شبکه و افزایش چشمگیر سرعت بارگذاری.
+- **دو زبانه بودن (Bilingual)**: ارائه نسخه کامل فارسی (`market_app.py`) و انگلیسی (`market_app_en.py`).
+
+---
+
+## 🗂️ ساختار پروژه
+```text
+Crypto-Market-Data/
+├── market_app_en.py      # برنامه تحت وب با رابط کاربری و توضیحات انگلیسی
+├── market_app.py         # برنامه تحت وب با رابط کاربری و توضیحات فارسی
+├── requirements.txt      # لیست پیش‌نیازها و پکیج‌های پایتون
+├── .gitignore            # فایل‌های نادیده‌گرفته‌شده توسط گیت
+└── README.md             # مستندات کامل پروژه به دو زبان انگلیسی و فارسی
+```
+
+---
+
+## 🚀 راهنمای نصب و راه‌اندازی
+
+### ۱. کلون کردن مخزن
+```bash
+git clone https://github.com/ebi19912/Crypto-Market-Data.git
+cd Crypto-Market-Data
+```
+
+### ۲. ساخت و فعال‌سازی محیط مجازی (Virtual Environment)
+```bash
+# ویندوز (PowerShell / CMD)
+python -m venv venv
+.\venv\Scripts\activate
+
+# لینوکس / مک
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### ۳. نصب پیش‌نیازها
+```bash
+pip install -r requirements.txt
+```
+
+### ۴. اجرای برنامه
+- **اجرای نسخه انگلیسی:**
+```bash
+streamlit run market_app_en.py
+```
+- **اجرای نسخه فارسی:**
+```bash
+streamlit run market_app.py
+```
+سپس مرورگر خود را باز کرده و به آدرس `http://localhost:8501` مراجعه کنید.
+
+---
+
+## 🔌 وب‌سرویس‌های استفاده‌شده (API Endpoints)
+این برنامه مستقیماً با APIهای عمومی نوبیتکس ارتباط برقرار می‌کند و نیاز به کلید دسترسی (API Key) ندارد:
+- **داده‌های کندل‌استیک (UDF):**
+  `GET https://api.nobitex.ir/market/udf/history?symbol={symbol}&resolution={resolution}&from={from}&to={to}`
+- **آمار و قیمت‌های جهانی:**
+  `POST https://api.nobitex.ir/market/global-stats`
